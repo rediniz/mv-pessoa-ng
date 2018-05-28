@@ -55,7 +55,7 @@ export class PessoaService {
     /**ATUALIZA INFORMAÇÕES DA PESSOA */
     atualizarPessoa(pessoa:Pessoa){
  
-        return this.http.put(this.baseUrlService, JSON.stringify(pessoa),this.options)
+        return this.http.put(this.baseUrlService + pessoa.id, JSON.stringify(pessoa),this.options)
         .map(res => res.json());
     }
  

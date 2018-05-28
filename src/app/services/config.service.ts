@@ -5,7 +5,7 @@ export class ConfigService {
     constructor(){
  
         // url do serviço REST criado com o SpringBoot
-        this.urlService = 'http://localhost:8090';
+        this.urlService = 'http://10.1.1.95:8090';
     }
  
     getUrlService(): string {
