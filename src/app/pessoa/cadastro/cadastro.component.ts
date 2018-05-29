@@ -97,9 +97,9 @@ import { Observable } from 'rxjs/Observable';
           this.router.navigate(['/consulta-pessoa']);
        },
        (erro) => {                    
-         /**AQUI VAMOS MOSTRAR OS ERROS NÃO TRATADOS
-          EXEMPLO: SE APLICAÇÃO NÃO CONSEGUIR FAZER UMA REQUEST NA API                        */                 
-          alert(erro);
+         console.log(erro);
+         alert("Ocorreu um erro durante a requisição: "+JSON.parse(erro._body).message);
+         
        });
       }
  
