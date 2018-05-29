@@ -27,7 +27,7 @@
                   <tr>
                     <th>Id</th>
                     <th>Nome</th>
-                    <th>Data de nascimento</th>
+                    <th>Idade</th>
                     <th>CPF</th>
                     <th>E-mail</th>
                     <th>Qtd. telefones</th>
@@ -40,7 +40,7 @@
                   <tr *ngFor="let pessoa of pessoas; let i = index;" >
                     <td>{{ pessoa.id }}</td>
                     <td>{{ pessoa.nome }}</td>
-                    <td>{{ pessoa.dataNascimento}}</td>
+                    <td>{{ getIdade(pessoa.dataNascimento)}}</td>
                     <td>{{ pessoa.cpf }}</td>
                     <td>{{ pessoa.email }}</td>
                     <td>{{ pessoa.telefones.length}}</td>

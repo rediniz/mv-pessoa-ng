@@ -35,6 +35,7 @@ import { Observable } from 'rxjs/Observable';
         if(parametro["id"] == undefined){
  
           this.titulo = "Cadastrar pessoa";
+          this.telefones = this.pessoa.telefones;
         }
         else{
  
@@ -46,7 +47,10 @@ import { Observable } from 'rxjs/Observable';
       });      
     }
   
-    adicionarTelefone(ddd: string, numero: string) {
+  adicionarTelefone(ddd: string, numero: string) {
+    if (this.pessoa.telefones == null) {
+      this.pessoa.telefones = [];
+      }
       this.pessoa.telefones.push({ id: null, ddd: ddd, numero: numero });
     }
   

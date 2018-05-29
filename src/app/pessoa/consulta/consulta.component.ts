@@ -70,7 +70,15 @@ import {Response} from '../../services/response';
   
     pesquisar(nome: string, cpf: string):void {
       this.pessoaService.getPessoas(nome, cpf).subscribe(res => this.pessoas = res);
-      console.log("teste");
+    }
+  
+    getIdade(nascimento:string) {
+      var parts     = nascimento.split('/');
+      var dataISO   = new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
+      var diferenca = Date.now() - dataISO.getTime();
+      var idade = Math.floor(diferenca / 1000 / 60 / 60 / 24 / 365);
+      
+      return idade;
     }
  
   }
