@@ -38,21 +38,8 @@ import {Response} from '../../services/response';
  
         /*CHAMA O SERVIÇO PARA REALIZAR A EXCLUSÃO */
         this.pessoaService.excluirPessoa(id).subscribe(response => {
- 
-              /**PEGA O RESPONSE DO SERVIÇO */
-              let res:Response = <Response>response;
- 
-              /*1 = SUCESSO
-              * MOSTRAMOS A MENSAGEM RETORNADA PELO SERVIÇO E DEPOIS REMOVEMOS
-              O REGISTRO DA TABELA HTML*/
-              if(res.codigo == 1){
-                alert(res.mensagem);
-                this.pessoas.splice(index,1);
-              }
-              else{
-                /*0 = EXCEPTION GERADA NO SERVIÇO JAVA */
-                alert(res.mensagem);
-              }
+          this.pessoas.splice(index, 1);
+          alert("Pessoa removida com sucesso.");
           },
           (erro) => {                    
                /*MOSTRA ERROS NÃO TRATADOS */
