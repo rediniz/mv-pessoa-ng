@@ -9,13 +9,13 @@
               <form class="form-inline">
                 <div class="form-group">
                   <label for="nome">Nome</label>
-                  <input type="text" class="form-control" id="nome">
+                  <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="nome">
                 </div>
                 <div class="form-group">
                   <label for="cpf">CPF</label>
-                  <input type="text" class="form-control" id="cpf">
+                  <input type="text" class="form-control" id="cpf" name="cpf" [(ngModel)]="cpf">
                 </div>
-                <button type="submit" class="btn btn-default">Buscar</button>
+                <button type="button" (click)="pesquisar(nome, cpf)" class="btn btn-default">Buscar</button>
               </form>
             </div>
           </div>

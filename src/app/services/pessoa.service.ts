@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Headers} from '@angular/http';
 import { RequestOptions } from '@angular/http';
+import { URLSearchParams } from '@angular/http';
  
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
@@ -30,8 +31,12 @@ export class PessoaService {
     }
  
     /**CONSULTA TODAS AS PESSOAS CADASTRADAS */
-    getPessoas(){        
-        return this.http.get(this.baseUrlService).map(res => res.json());
+    getPessoas(nome: string, cpf: string) {    
+        let params = new URLSearchParams();
+        params.append("nome", nome);
+        params.append("cpf", cpf);
+
+        return this.http.get(this.baseUrlService, {search:params}).map(res => res.json());
     }
  
     /**ADICIONA UMA NOVA PESSOA */

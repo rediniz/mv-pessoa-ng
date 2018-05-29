@@ -27,7 +27,7 @@ import {Response} from '../../services/response';
       this.titulo = "Consulta de pessoas";
  
       /*CHAMA O SERVIÇO E RETORNA TODAS AS PESSOAS CADASTRADAS */
-      this.pessoaService.getPessoas().subscribe(res => this.pessoas = res);
+      this.pessoaService.getPessoas(null, null).subscribe(res => this.pessoas = res);
     }
  
     /**EXCLUI UM REGISTRO QUANDO CLICAMOS NA OPÇÃO EXCLUIR DE UMA 
@@ -66,6 +66,11 @@ import {Response} from '../../services/response';
  
       this.router.navigate(['/cadastro-pessoa',id]);
  
+    }
+  
+    pesquisar(nome: string, cpf: string):void {
+      this.pessoaService.getPessoas(nome, cpf).subscribe(res => this.pessoas = res);
+      console.log("teste");
     }
  
   }
