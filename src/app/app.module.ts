@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
 import { CadastroComponent } from './pessoa/cadastro/cadastro.component';
+import { ConsultaComponent } from './pessoa/consulta/consulta.component';
 
 import { routing } from './../app.routes';
 
@@ -17,7 +19,9 @@ import { Pessoa } from './services/pessoa';
   declarations: [
     AppComponent,
     HomeComponent,
-    CadastroComponent
+    MenuComponent,
+    CadastroComponent,
+    ConsultaComponent
   ],
   imports: [
     BrowserModule,
